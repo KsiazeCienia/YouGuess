@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="PoiretOne-Regular.ttf">
+            <string>PoiretOne-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Resolved You Tuber View Controller-->
+        <scene sceneID="pq4-T7-sYg">
+            <objects>
+                <viewController storyboardIdentifier="ResolvedYouTuberViewController" id="vve-yD-NCa" customClass="ResolvedYouTuberViewController" customModule="YouGuess" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ko5-3p-JdP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GUO-9s-3zR">
+                                <rect key="frame" x="40" y="69" width="295" height="221"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GUO-9s-3zR" secondAttribute="height" multiplier="4:3" id="69e-y8-Yvx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxV-eE-zeA">
+                                <rect key="frame" x="5" y="305" width="365" height="35"/>
+                                <fontDescription key="fontDescription" name="PoiretOne-Regular" family="Poiret One" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEU-U0-LaJ" customClass="AdView" customModule="YouGuess" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MMB-m0-BRi"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gratulacje udało Ci się już rozwiązać tego YouTuber'a!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqf-Rx-Yfk">
+                                <rect key="frame" x="5" y="390" width="365" height="23.5"/>
+                                <fontDescription key="fontDescription" name="PoiretOne-Regular" family="Poiret One" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIT-DB-5Ic">
+                                <rect key="frame" x="331" y="30" width="24" height="24"/>
+                                <state key="normal" backgroundImage="Nastepny"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="vve-yD-NCa" eventType="touchUpInside" id="LPa-RK-myR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qxV-eE-zeA" firstAttribute="leading" secondItem="Klf-35-eYP" secondAttribute="leading" constant="5" id="2g0-uW-L1y"/>
+                            <constraint firstItem="GUO-9s-3zR" firstAttribute="leading" secondItem="Klf-35-eYP" secondAttribute="leading" constant="40" id="6GO-MH-TGs"/>
+                            <constraint firstItem="qxV-eE-zeA" firstAttribute="top" secondItem="GUO-9s-3zR" secondAttribute="bottom" constant="15" id="adW-qq-wYb"/>
+                            <constraint firstItem="Klf-35-eYP" firstAttribute="trailing" secondItem="qxV-eE-zeA" secondAttribute="trailing" constant="5" id="cqo-ZA-DXT"/>
+                            <constraint firstItem="hEU-U0-LaJ" firstAttribute="bottom" secondItem="Klf-35-eYP" secondAttribute="bottom" id="fOI-ux-NR5"/>
+                            <constraint firstItem="Klf-35-eYP" firstAttribute="trailing" secondItem="Bqf-Rx-Yfk" secondAttribute="trailing" constant="5" id="hKX-fC-Owq"/>
+                            <constraint firstItem="Bqf-Rx-Yfk" firstAttribute="top" secondItem="qxV-eE-zeA" secondAttribute="bottom" constant="50" id="mnE-Vl-vfu"/>
+                            <constraint firstItem="Klf-35-eYP" firstAttribute="trailing" secondItem="hEU-U0-LaJ" secondAttribute="trailing" id="pE8-M9-adi"/>
+                            <constraint firstItem="Bqf-Rx-Yfk" firstAttribute="leading" secondItem="Klf-35-eYP" secondAttribute="leading" constant="5" id="pWS-6K-N4U"/>
+                            <constraint firstItem="jIT-DB-5Ic" firstAttribute="top" secondItem="Klf-35-eYP" secondAttribute="top" constant="10" id="s8l-ih-iG6"/>
+                            <constraint firstItem="hEU-U0-LaJ" firstAttribute="leading" secondItem="Klf-35-eYP" secondAttribute="leading" id="t89-WH-oBc"/>
+                            <constraint firstItem="GUO-9s-3zR" firstAttribute="centerX" secondItem="Klf-35-eYP" secondAttribute="centerX" id="ttZ-uZ-o7D"/>
+                            <constraint firstItem="Klf-35-eYP" firstAttribute="trailing" secondItem="jIT-DB-5Ic" secondAttribute="trailing" constant="20" id="vL2-cL-qui"/>
+                            <constraint firstItem="GUO-9s-3zR" firstAttribute="top" secondItem="jIT-DB-5Ic" secondAttribute="bottom" constant="15" id="wrL-qt-2ES"/>
+                            <constraint firstItem="Klf-35-eYP" firstAttribute="trailing" secondItem="GUO-9s-3zR" secondAttribute="trailing" constant="40" id="wsh-aR-9e6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Klf-35-eYP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WHX-NG-HK7"/>
+                    <connections>
+                        <outlet property="adView" destination="hEU-U0-LaJ" id="hBV-Kh-2yI"/>
+                        <outlet property="image" destination="GUO-9s-3zR" id="XQJ-eg-e65"/>
+                        <outlet property="label" destination="qxV-eE-zeA" id="afB-tS-j6v"/>
+                        <outlet property="nextButton" destination="jIT-DB-5Ic" id="Zgc-da-fMn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ps7-cY-DVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="-163"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Nastepny" width="24" height="24"/>
+    </resources>
+</document>

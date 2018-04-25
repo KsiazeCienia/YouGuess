@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Question View Controller-->
+        <scene sceneID="raJ-co-Yki">
+            <objects>
+                <viewController storyboardIdentifier="QuestionViewController" id="YFh-5Z-NZo" userLabel="Question View Controller" customClass="QuestionViewController" customModule="YouGuess" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CQl-Bb-eGz"/>
+                        <viewControllerLayoutGuide type="bottom" id="uC5-Y5-iJx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aL2-09-VIh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wbQ-cP-eiJ" userLabel="answerCollectionView">
+                                <rect key="frame" x="5" y="350.5" width="365" height="166.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="cyO-bu-Qx5">
+                                    <size key="itemSize" width="35" height="35"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dbe-LQ-9sC" userLabel="questionCollection View">
+                                <rect key="frame" x="5" y="517" width="365" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="z1t-YH-Wql"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="3" id="5zt-Iw-mok">
+                                    <size key="itemSize" width="35" height="35"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E4G-yf-f4e">
+                                <rect key="frame" x="40" y="58.5" width="295" height="221.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="E4G-yf-f4e" secondAttribute="height" multiplier="4:3" priority="998" id="uF6-P0-RpV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpO-Ij-Rlu" userLabel="hint" customClass="HelpButton" customModule="YouGuess" customModuleProvider="target">
+                                <rect key="frame" x="16" y="23" width="37.5" height="33.5"/>
+                                <state key="normal" image="UsunLitere"/>
+                                <connections>
+                                    <action selector="hintButtonTapped:" destination="YFh-5Z-NZo" eventType="touchUpInside" id="68N-qp-Ksp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tf-Iv-7y1" userLabel="answer" customClass="HelpButton" customModule="YouGuess" customModuleProvider="target">
+                                <rect key="frame" x="168.5" y="23" width="37.5" height="33.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="Podpowiedz"/>
+                                <connections>
+                                    <action selector="answerButtonTapped:" destination="YFh-5Z-NZo" eventType="touchUpInside" id="kA2-dr-i92"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uao-33-suP" userLabel="next" customClass="HelpButton" customModule="YouGuess" customModuleProvider="target">
+                                <rect key="frame" x="321.5" y="23" width="37.5" height="33.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="Nastepny"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="YFh-5Z-NZo" eventType="touchUpInside" id="ftb-39-XQt"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGm-bH-YVF" customClass="AdView" customModule="YouGuess" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="raX-cP-7HN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eGm-bH-YVF" secondAttribute="trailing" id="29i-rI-DUT"/>
+                            <constraint firstItem="0tf-Iv-7y1" firstAttribute="top" secondItem="CQl-Bb-eGz" secondAttribute="bottom" constant="3" id="6fF-Kt-ibh"/>
+                            <constraint firstItem="eGm-bH-YVF" firstAttribute="top" secondItem="dbe-LQ-9sC" secondAttribute="bottom" id="7sA-1a-Upg"/>
+                            <constraint firstItem="dbe-LQ-9sC" firstAttribute="top" secondItem="wbQ-cP-eiJ" secondAttribute="bottom" id="ChB-JC-F98"/>
+                            <constraint firstItem="uao-33-suP" firstAttribute="top" secondItem="CQl-Bb-eGz" secondAttribute="bottom" constant="3" id="GuF-pV-iXa"/>
+                            <constraint firstItem="OpO-Ij-Rlu" firstAttribute="height" secondItem="aL2-09-VIh" secondAttribute="height" multiplier="0.05" id="JDH-89-lkX"/>
+                            <constraint firstItem="E4G-yf-f4e" firstAttribute="top" secondItem="OpO-Ij-Rlu" secondAttribute="bottom" constant="2" id="Kda-gV-42V"/>
+                            <constraint firstItem="0tf-Iv-7y1" firstAttribute="height" secondItem="aL2-09-VIh" secondAttribute="height" multiplier="0.05" id="MlS-Hi-ZBp"/>
+                            <constraint firstItem="OpO-Ij-Rlu" firstAttribute="leading" secondItem="aL2-09-VIh" secondAttribute="leadingMargin" id="OYX-P6-mmG"/>
+                            <constraint firstAttribute="bottom" secondItem="eGm-bH-YVF" secondAttribute="bottom" id="QR3-n0-m3Z"/>
+                            <constraint firstItem="0tf-Iv-7y1" firstAttribute="width" secondItem="aL2-09-VIh" secondAttribute="width" multiplier="0.1" id="R5z-Jq-LsM"/>
+                            <constraint firstItem="E4G-yf-f4e" firstAttribute="leading" secondItem="aL2-09-VIh" secondAttribute="leading" constant="40" id="RuP-Mw-MIv"/>
+                            <constraint firstItem="wbQ-cP-eiJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="E4G-yf-f4e" secondAttribute="bottom" priority="999" constant="17" id="WdM-0A-4f5"/>
+                            <constraint firstItem="OpO-Ij-Rlu" firstAttribute="width" secondItem="aL2-09-VIh" secondAttribute="width" multiplier="0.1" id="Z76-5z-rwo"/>
+                            <constraint firstItem="wbQ-cP-eiJ" firstAttribute="height" secondItem="aL2-09-VIh" secondAttribute="height" multiplier="0.25" id="ZMy-9b-KxS"/>
+                            <constraint firstItem="uao-33-suP" firstAttribute="height" secondItem="0tf-Iv-7y1" secondAttribute="height" id="aDD-CX-UdV"/>
+                            <constraint firstItem="dbe-LQ-9sC" firstAttribute="leading" secondItem="aL2-09-VIh" secondAttribute="leading" constant="5" id="bip-c7-i5h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uao-33-suP" secondAttribute="trailing" id="d0n-Q3-NvE"/>
+                            <constraint firstAttribute="trailing" secondItem="dbe-LQ-9sC" secondAttribute="trailing" constant="5" id="fvI-1Y-dq2"/>
+                            <constraint firstItem="eGm-bH-YVF" firstAttribute="leading" secondItem="aL2-09-VIh" secondAttribute="leading" id="gcv-2I-GkJ"/>
+                            <constraint firstItem="E4G-yf-f4e" firstAttribute="top" secondItem="0tf-Iv-7y1" secondAttribute="bottom" constant="2" id="kbh-PJ-Z3s"/>
+                            <constraint firstAttribute="trailing" secondItem="E4G-yf-f4e" secondAttribute="trailing" constant="40" id="kq6-Ma-KGy"/>
+                            <constraint firstItem="OpO-Ij-Rlu" firstAttribute="top" secondItem="CQl-Bb-eGz" secondAttribute="bottom" constant="3" id="nq6-M3-Ppu"/>
+                            <constraint firstAttribute="trailing" secondItem="wbQ-cP-eiJ" secondAttribute="trailing" constant="5" id="oh7-FV-dEF"/>
+                            <constraint firstItem="E4G-yf-f4e" firstAttribute="centerX" secondItem="aL2-09-VIh" secondAttribute="centerX" id="qb4-zs-9Rv"/>
+                            <constraint firstItem="0tf-Iv-7y1" firstAttribute="centerX" secondItem="aL2-09-VIh" secondAttribute="centerX" id="qbT-Ab-03a"/>
+                            <constraint firstItem="wbQ-cP-eiJ" firstAttribute="leading" secondItem="aL2-09-VIh" secondAttribute="leading" constant="5" id="ry4-HJ-AUK"/>
+                            <constraint firstItem="E4G-yf-f4e" firstAttribute="top" secondItem="uao-33-suP" secondAttribute="bottom" priority="997" constant="11.5" id="uYd-oQ-IO0"/>
+                            <constraint firstItem="uao-33-suP" firstAttribute="width" secondItem="0tf-Iv-7y1" secondAttribute="width" id="xGc-wB-wXM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fvz-sG-Mqq"/>
+                    </view>
+                    <connections>
+                        <outlet property="adView" destination="eGm-bH-YVF" id="Wuh-8C-v7i"/>
+                        <outlet property="answerCollectionView" destination="wbQ-cP-eiJ" id="SNk-vI-LxS"/>
+                        <outlet property="nextButton" destination="uao-33-suP" id="ChC-LV-xRn"/>
+                        <outlet property="questionCollectionView" destination="dbe-LQ-9sC" id="tdo-Ae-SK0"/>
+                        <outlet property="questionCollectionViewHeight" destination="z1t-YH-Wql" id="aaR-45-Lc5"/>
+                        <outlet property="questionImage" destination="E4G-yf-f4e" id="IvP-pT-SL8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDl-4I-CSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Nastepny" width="24" height="24"/>
+        <image name="Podpowiedz" width="36" height="33"/>
+        <image name="UsunLitere" width="34" height="34"/>
+    </resources>
+</document>

@@ -1,0 +1,55 @@
+# Customise this file, documentation can be found here:
+# https://docs.fastlane.tools/actions/
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.60.1"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    ensure_git_status_clean
+    cocoapods
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+  def build_to_app_store
+      match(type: "appstore")
+      gym(scheme: "YouGuess",
+	  output_directory: "fastlane/build/youguess")
+      pilot(skip_waiting_for_build_processing: true)
+      clean_build_artifacts
+      build_number = get_build_number
+      increment_build_number
+      commit_version_bump(
+      message: "Version TestFlight (YouGuess) " + get_version_number + " (" + build_number + ")",
+      force: true
+      )
+      push_to_git_remote
+end
+
+  desc "Submit a new build to App Store"
+  lane :app_store do
+      build_to_app_store
+  end
+
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+  end
+end

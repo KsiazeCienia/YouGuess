@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6bA-mn-vD9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="sRD-Ud-l26">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="6bA-mn-vD9" customClass="LoginViewController" customModule="YouGuess" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yRC-Ah-4mN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="rIG-Wv-WvN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sT-fm-tyA" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="15" y="318.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iU2-qg-ilk"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yPb-lb-FwA">
+                                <rect key="frame" x="152.5" y="228.5" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yPb-lb-FwA" secondAttribute="height" multiplier="1:1" id="4Xr-BF-dt1"/>
+                                    <constraint firstAttribute="height" constant="70" id="kVz-1h-Xa8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I6a-Am-Dpk" firstAttribute="trailing" secondItem="6sT-fm-tyA" secondAttribute="trailing" constant="15" id="Ds6-0u-KmB"/>
+                            <constraint firstItem="6sT-fm-tyA" firstAttribute="leading" secondItem="I6a-Am-Dpk" secondAttribute="leading" constant="15" id="FMI-7R-OTb"/>
+                            <constraint firstItem="6sT-fm-tyA" firstAttribute="centerY" secondItem="yRC-Ah-4mN" secondAttribute="centerY" id="KpH-kM-Zqt"/>
+                            <constraint firstItem="rIG-Wv-WvN" firstAttribute="top" secondItem="I6a-Am-Dpk" secondAttribute="top" id="Qhm-dC-LO2"/>
+                            <constraint firstItem="rIG-Wv-WvN" firstAttribute="trailing" secondItem="I6a-Am-Dpk" secondAttribute="trailing" id="Qmm-zf-etU"/>
+                            <constraint firstItem="rIG-Wv-WvN" firstAttribute="leading" secondItem="I6a-Am-Dpk" secondAttribute="leading" id="dqi-q0-WzR"/>
+                            <constraint firstAttribute="bottom" secondItem="rIG-Wv-WvN" secondAttribute="bottom" id="fqg-1q-LIx"/>
+                            <constraint firstItem="yPb-lb-FwA" firstAttribute="centerX" secondItem="yRC-Ah-4mN" secondAttribute="centerX" id="iel-dD-Zfo"/>
+                            <constraint firstItem="6sT-fm-tyA" firstAttribute="centerX" secondItem="yRC-Ah-4mN" secondAttribute="centerX" id="lIx-YB-4Pm"/>
+                            <constraint firstItem="6sT-fm-tyA" firstAttribute="top" secondItem="yPb-lb-FwA" secondAttribute="bottom" constant="20" id="ytO-nV-JDX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I6a-Am-Dpk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qd5-Ou-HFw"/>
+                    <connections>
+                        <outlet property="loginButton" destination="6sT-fm-tyA" id="tbi-5d-9K4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ENF-Yv-vTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="70.614692653673174"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="621" height="1104"/>
+        <image name="logo" width="83" height="83"/>
+    </resources>
+</document>
